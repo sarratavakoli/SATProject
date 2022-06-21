@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace [ProjectNameGoesHere].UI.MVC.Models
+namespace SATProject.UI.MVC.Models
 {
     public class CreateRoleViewModel
     {
