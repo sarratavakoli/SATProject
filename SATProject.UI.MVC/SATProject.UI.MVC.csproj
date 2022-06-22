@@ -36,4 +36,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SATProject.DATA.EF\SATProject.DATA.EF.csproj" />
+  </ItemGroup>
+
 </Project>
