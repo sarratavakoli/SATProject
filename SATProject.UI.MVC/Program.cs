@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SATProject.DATA.EF.Models;
 using SATProject.UI.MVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddDbContext<SATContext>(options =>options.UseSqlServer(connectionString));
 //registering new dbcontext here
 //
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
