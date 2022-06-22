@@ -1,18 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-
-namespace SATProject.DATA.EF.Metadata.cs
+namespace SATProject.DATA.EF.Models
 {
 
     #region Course
     [ModelMetadataType(typeof(CourseMetadata))]
 
-    public class CourseMetadata { }
+    public partial class Course { }
 
 
 
@@ -22,7 +24,7 @@ namespace SATProject.DATA.EF.Metadata.cs
 
     [ModelMetadataType(typeof(EnrollmentMetadata))]
 
-    public class EnrollmentMetadata { }
+    public partial class Enrollment { }
 
 
     #endregion
@@ -31,7 +33,7 @@ namespace SATProject.DATA.EF.Metadata.cs
 
     [ModelMetadataType(typeof(ScheduledClassMetadata))]
 
-    public class ScheduledClassMetadata { }
+    public partial class ScheduledClass { }
 
     #endregion
 
@@ -39,7 +41,7 @@ namespace SATProject.DATA.EF.Metadata.cs
 
     [ModelMetadataType(typeof(ScheduledClassStatusMetadata))]
 
-    public class ScheduledClassStatusMetadata { }
+    public partial class ScheduledClassStatus { }
 
     #endregion
 
@@ -47,7 +49,7 @@ namespace SATProject.DATA.EF.Metadata.cs
 
     [ModelMetadataType(typeof(StudentMetadata))]
 
-    public class StudentMetadata { }
+    public partial class Student { }
 
 
     #endregion
@@ -56,7 +58,7 @@ namespace SATProject.DATA.EF.Metadata.cs
 
     [ModelMetadataType(typeof(StudentStatusMetadata))]
 
-    public class SentStudentMetadata { }
+    public partial class StudentStatus{ }
 
 
 

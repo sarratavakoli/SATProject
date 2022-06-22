@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SATProject.DATA.EF.Metadata.cs
+namespace SATProject.DATA.EF.Models
 {
    public class CourseMetadata
     {   
