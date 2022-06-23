@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Email Confirmation";
+}
+
+
+@model SATProject.UI.MVC.Models.ContactViewModel
+
+  <!-- ======= Main ======= -->
+   <section class="wrapper site-min-height">
+        <!-- ======= Confirmation Section ======= -->
+        <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="container">
+
+                <div class="row">
+
+                 
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                        <div class="info-box">
+                            <i class="bx bx-check-circle"></i>
+                            <h3>Message Sent!</h3>
+                            @*
+
+                            When referencing a SPECIFIC OBJECT that fits the model (like the
+                            cvm object thtat was passed to this view), we use a capital M -- "Model"
+
+                            *@
+                            <p>
+                               Thanks you for contacting us, Complimentary altoids sent to your house at address provided
+                               @Model.Email, in the next 9-26 days.
+
+                            </p>
+
+                            <br />
+
+                            <div class="offset-3 col-md-6 text-center">
+                                <p>
+                                  You sent the following message on
+                                  @DateTime.Now.Date.ToShortDateString() at
+                                  @DateTime.Now.ToShortDateString()
+                                </p>
+                            </div>
+
+                            <br />
+
+                           
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Confirmation Section -->
+        <!-- ======= Map Section ======= -->
+   
+   </section>
+    <!-- ======= Footer ======= -->
