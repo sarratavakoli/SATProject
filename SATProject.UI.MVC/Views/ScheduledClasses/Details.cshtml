@@ -1,13 +1,12 @@
 ﻿@model SATProject.DATA.EF.Models.ScheduledClass
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Scheduled Class Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>ScheduledClass</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -50,5 +49,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ScheduledClassId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Scheduled Classes</a>
 </div>

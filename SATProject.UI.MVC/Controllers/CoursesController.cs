@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,12 +22,25 @@ namespace SATProject.UI.MVC.Controllers
         // GET: Courses
         public async Task<IActionResult> Index()
         {
-              return _context.Courses != null ? 
-                          View(await _context.Courses.ToListAsync()) :
-                          Problem("Entity set 'SATContext.Courses'  is null.");
+            //return _context.Courses != null ? 
+            //            View(await _context.Courses.ToListAsync()) :
+            //            Problem("Entity set 'SATContext.Courses'  is null.");
+
+            if (User.IsInRole("Admin"))
+            {
+                var courses = _context.Courses.Include(c => c.ScheduledClasses);
+                return View(await courses.ToListAsync());
+            }
+            else
+            {
+                var courses = _context.Courses.Where(c => c.IsActive)
+                    .Include(c => c.ScheduledClasses);
+                return View(await courses.ToListAsync());
+            }
         }
 
         // GET: Courses/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -45,6 +59,7 @@ namespace SATProject.UI.MVC.Controllers
         }
 
         // GET: Courses/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -55,6 +70,7 @@ namespace SATProject.UI.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Course course)
         {
             if (ModelState.IsValid)
@@ -67,6 +83,7 @@ namespace SATProject.UI.MVC.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -87,6 +104,7 @@ namespace SATProject.UI.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Course course)
         {
             if (id != course.CourseId)
@@ -118,6 +136,7 @@ namespace SATProject.UI.MVC.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Courses == null)
@@ -138,6 +157,7 @@ namespace SATProject.UI.MVC.Controllers
         // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Courses == null)

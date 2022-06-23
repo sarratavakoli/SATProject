@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SATProject.DATA.EF.Models.Enrollment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Enrollments";
 }
 
-<h2>Index</h2>
+<h2>@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add New</a>
 </p>
 <table class="table">
     <thead>
@@ -16,7 +16,8 @@
                 @Html.DisplayNameFor(model => model.EnrollmentDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ScheduledClass)
+                @*@Html.DisplayNameFor(model => model.ScheduledClass)*@
+                Scheduled Class
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Student)

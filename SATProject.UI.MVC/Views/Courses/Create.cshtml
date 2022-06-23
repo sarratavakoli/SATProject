@@ -1,12 +1,10 @@
 ﻿@model SATProject.DATA.EF.Models.Course
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add New Course";
 }
 
-<h2>Create</h2>
-
-<h4>Course</h4>
+<h2>@ViewData["Title"]</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -52,7 +50,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Courses</a>
 </div>
 
 @section Scripts {

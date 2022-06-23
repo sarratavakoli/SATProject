@@ -49,7 +49,12 @@ namespace SATProject.DATA.EF.Models
 
     [ModelMetadataType(typeof(StudentMetadata))]
 
-    public partial class Student { }
+    public partial class Student {
+        public string FullName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }
+    }
 
 
     #endregion

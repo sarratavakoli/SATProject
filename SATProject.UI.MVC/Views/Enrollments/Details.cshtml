@@ -1,13 +1,12 @@
 ﻿@model SATProject.DATA.EF.Models.Enrollment
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Enrollment Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Enrollment</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -32,5 +31,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.EnrollmentId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Enrollments</a>
 </div>

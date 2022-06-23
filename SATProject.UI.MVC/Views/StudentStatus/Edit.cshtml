@@ -1,12 +1,11 @@
 ﻿@model SATProject.DATA.EF.Models.StudentStatus
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Student Status";
 }
 
-<h2>Edit</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>StudentStatus</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -31,7 +30,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Student Status List</a>
 </div>
 
 @section Scripts {
