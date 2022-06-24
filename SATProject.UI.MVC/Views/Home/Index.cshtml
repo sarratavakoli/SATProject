@@ -1,11 +1,94 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
-<section class="wrapper site-min-height">
-    <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-    <div class="row mt">
-        <div class="col-lg-12">
-            <p>Place your content here.</p>
+
+@section css {
+<link href="~/css/custom.css" rel="stylesheet">
+}
+
+<section class="wrapper site-min-height index-block">
+    <div style="margin: 40px;">
+
+
+
+        <div class="row" style="margin-right; 40px;">
+            <div style="background-color: white; border-radius: 15px; margin-bottom: 20px; padding: 40px; padding-left: 65px; padding-right: 65px;">
+                <h1 class="fw-light">Enroll your students</h1>
+                <p class="lead text-muted">Select from registered students and enroll them in upcoming classes. Our next semester of classes start on Monday, August 22, 2022.</p>
+                <p>
+                    <a href="@Url.Action("Create", "Enrollments")" class="btn-custom my-2"
+                       style="color: #f2f2f2;
+                            font-size: 12px;
+                            border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border: 1px solid #64c3c2 !important;
+                            padding: 5px 15px;
+                            margin-right: 15px;
+                            background: #4ECDC4;
+                            margin-top: 15px;">
+                        Enroll
+                    </a>
+                </p>
+            </div>
         </div>
+
+
+
+        <div class="row" style="margin-right; 40px;">
+            <div style="background-color: white; border-radius: 15px; margin-bottom: 20px; padding: 40px; padding-left: 65px; padding-right: 65px;">
+                <h1 class="fw-light">Student Directory</h1>
+                <p class="lead text-muted">Review the full list of our students. Register students or update existing records as needed here.</p>
+                <p>
+                    <a href="@Url.Action("Index", "Students")" class="btn-custom my-2"
+                    style="color: #f2f2f2;
+                            font-size: 12px;
+                            border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border: 1px solid #64c3c2 !important;
+                            padding: 5px 15px;
+                            margin-right: 15px;
+                            background: #4ECDC4;
+                            margin-top: 15px;">
+                        Directory</a>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row" style="margin-right; 40px;">
+            <div style="background-color: white; border-radius: 15px; margin-bottom: 20px; padding: 40px; padding-left: 65px; padding-right: 65px;">
+                <h1 class="fw-light">Fall Semester 2022</h1>
+                <p class="lead text-muted">Check out the courses we offer as well as the list of those courses available for Fall 2022 classes. </p>
+                <p>
+                    <a href="@Url.Action("Index", "Courses")" class="btn-custom my-2"
+                    style="color: #f2f2f2;
+                            font-size: 12px;
+                            border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border: 1px solid #64c3c2 !important;
+                            padding: 5px 15px;
+                            margin-right: 15px;
+                            background: #4ECDC4;
+                            margin-top: 15px;">
+                    Courses</a>
+                    <a href="@Url.Action("Index", "ScheduledClasses")" class="btn-custom my-2"
+                    style="color: #f2f2f2;
+                            font-size: 12px;
+                            border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            border: 1px solid #64c3c2 !important;
+                            padding: 5px 15px;
+                            margin-right: 15px;
+                            background: #4ECDC4;
+                            margin-top: 15px;">
+                    Class Catalog</a>
+                </p>
+            </div>
+        </div>
+
+
     </div>
 </section>
+
+}
