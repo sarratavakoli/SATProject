@@ -23,7 +23,7 @@ namespace SATProject.DATA.EF.Models
         public byte[]? PhotoUrl { get; set; }
         public int Ssid { get; set; }
 
-        public virtual StudentStatus Ss { get; set; } = null!;
+        public virtual StudentStatus? Ss { get; set; } = null!;
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

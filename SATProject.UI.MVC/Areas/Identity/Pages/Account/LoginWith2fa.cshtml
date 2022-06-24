@@ -4,6 +4,7 @@
     ViewData["Title"] = "Two-factor authentication";
 }
 
+<section class="wrapper">
 <h2>@ViewData["Title"]</h2>
 <hr />
 <p>Your login is protected with an authenticator app. Enter your authenticator code below.</p>
@@ -35,6 +36,7 @@
     Don't have access to your authenticator device? You can 
     <a asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">log in with a recovery code</a>.
 </p>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
