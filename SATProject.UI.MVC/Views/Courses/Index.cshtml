@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="~/css/to-do.css">
 }
 
-<section class="wrapper">
+<section class="wrapper site-min-height">
     <!-- COMPLEX TO DO LIST -->
     <div class="row mt">
         <div class="col-md-12">
@@ -25,25 +25,38 @@
                 <div class="panel-body">
                     <div class="task-content">
                         <ul class="task-list">
-
-                            @foreach (var item in Model)
-                            {
-                                <li>
-                                    <div class="task-title">
-                                        <a asp-action="Details" asp-route-id="@item.CourseId">@Html.DisplayFor(modelItem => item.CourseName)</a>                                        
+                                @foreach (var item in Model)
+                                {
+                                    <li>
+                                        <div class="task-title">
+                                            @if (User.IsInRole("Admin"))
+                                                {
+                                            <a asp-action="Details" asp-route-id="@item.CourseId">@Html.DisplayFor(modelItem => item.CourseName)</a>
+                                        }
+                                        else
+                                        {
+                                            @item.CourseName
+                                        }
                                         <div class="pull-right">
-                                            <a class="btn btn-primary btn-xs" asp-action="Edit" asp-route-id="@item.CourseId"><i class="fa fa-pencil"></i></a>
-                                            <a class="btn btn-success btn-xs" asp-action="Details" asp-route-id="@item.CourseId"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.CourseId"><i class="fa fa-trash"></i></a>
+                                               @if (User.IsInRole("Admin"))
+                                                {
+                                                <a class="btn btn-primary btn-xs" asp-action="Edit" asp-route-id="@item.CourseId"><i class="fa fa-pencil"></i></a>
+                                                <a class="btn btn-success btn-xs" asp-action="Details" asp-route-id="@item.CourseId"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.CourseId"><i class="fa fa-trash"></i></a>
+                                                }
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            }
+                                    </li>
+                                }
+                            
                         </ul>
                     </div>
-                    <div class=" add-task-row">
-                        <a class="btn btn-success btn-sm pull-left" asp-action="Create">Add Course</a>
-                    </div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class=" add-task-row">
+                            <a class="btn btn-success btn-sm pull-left" asp-action="Create">Add Course</a>
+                        </div>
+                    }
                 </div>
             </section>
         </div>

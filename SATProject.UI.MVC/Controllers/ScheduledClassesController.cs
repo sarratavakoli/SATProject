@@ -49,7 +49,7 @@ namespace SATProject.UI.MVC.Controllers
         // GET: ScheduledClasses/Create
         public IActionResult Create()
         {
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseDescription");
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseName");
             ViewData["Ssid"] = new SelectList(_context.ScheduledClassStatuses, "Ssid", "Scsname");
             return View();
         }
@@ -85,7 +85,7 @@ namespace SATProject.UI.MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseDescription", scheduledClass.CourseId);
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseName", scheduledClass.CourseId);
             ViewData["Ssid"] = new SelectList(_context.ScheduledClassStatuses, "Ssid", "Scsname", scheduledClass.Ssid);
             return View(scheduledClass);
         }

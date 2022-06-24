@@ -24,7 +24,9 @@ namespace SATProject.DATA.EF.Models
 
     [ModelMetadataType(typeof(EnrollmentMetadata))]
 
-    public partial class Enrollment { }
+    public partial class Enrollment {
+        
+    }
 
 
     #endregion
@@ -33,7 +35,12 @@ namespace SATProject.DATA.EF.Models
 
     [ModelMetadataType(typeof(ScheduledClassMetadata))]
 
-    public partial class ScheduledClass { }
+    public partial class ScheduledClass { 
+        public string IDWithInstructor
+        {
+            get { return $"{CourseId} - {InstructorName}"; }
+        }
+    }
 
     #endregion
 
@@ -41,7 +48,9 @@ namespace SATProject.DATA.EF.Models
 
     [ModelMetadataType(typeof(ScheduledClassStatusMetadata))]
 
-    public partial class ScheduledClassStatus { }
+    public partial class ScheduledClassStatus {
+        
+    }
 
     #endregion
 

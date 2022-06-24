@@ -109,7 +109,8 @@ namespace SATProject.DATA.EF.Models
         [StringLength(100)]
         [Display(Name = "Photo URL")]
         public string PhotoUrl { get; set; }
-        [Required(ErrorMessage = "* SSID is required.")]
+        [Required(ErrorMessage = "* Status is required.")]
+        [Display(Name = "Status")]
         public int SSID { get; set;}
     }
 

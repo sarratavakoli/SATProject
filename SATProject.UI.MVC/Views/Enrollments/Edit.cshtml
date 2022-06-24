@@ -4,6 +4,16 @@
     ViewData["Title"] = "Edit Enrollment";
 }
 
+
+@section css {
+<!-- Custom styles for lists template -->
+<link href="~/css/style.css" rel="stylesheet">
+<link href="~/css/style-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/to-do.css">
+}
+
+<section class="wrapper">
+   
 <h2>@ViewData["Title"]</h2>
 
 <hr />
@@ -13,12 +23,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="EnrollmentId" />
             <div class="form-group">
-                <label asp-for="StudentId" class="control-label"></label>
+                Student
                 <select asp-for="StudentId" class="form-control" asp-items="ViewBag.StudentId"></select>
                 <span asp-validation-for="StudentId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ScheduledClassId" class="control-label"></label>
+                Class
                 <select asp-for="ScheduledClassId" class="form-control" asp-items="ViewBag.ScheduledClassId"></select>
                 <span asp-validation-for="ScheduledClassId" class="text-danger"></span>
             </div>
@@ -38,6 +48,22 @@
     <a asp-action="Index">Back to Enrollments</a>
 </div>
 
+</section>
+
 @section Scripts {
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="lib/tasks.js" type="text/javascript"></script>
+<script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+</script>
+<script>
+    jQuery(document).ready(function() {
+      TaskList.initTaskWidget();
+    });
+
+    $(function() {
+      $("#sortable").sortable();
+      $("#sortable").disableSelection();
+    });
+</script>
 }

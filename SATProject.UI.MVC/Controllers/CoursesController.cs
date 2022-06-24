@@ -18,7 +18,7 @@ namespace SATProject.UI.MVC.Controllers
         {
             _context = context;
         }
-
+         
         // GET: Courses
         public async Task<IActionResult> Index()
         {
