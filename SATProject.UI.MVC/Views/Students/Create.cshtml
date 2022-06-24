@@ -68,11 +68,11 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
+            <div class="form-group">
                 <label asp-for="PhotoUrl" class="control-label"></label>
               <input type="file" asp-for="Image" class="form-control" />
                 <span asp-validation-for="PhotoUrl" class="text-danger"></span>
-            </div>*@
+            </div>
             <div class="form-group">
                 <label asp-for="Ssid" class="control-label">Status</label>
                 <select asp-for="Ssid" class ="form-control" asp-items="ViewBag.Ssid"></select>
