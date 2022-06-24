@@ -63,6 +63,8 @@ namespace SATProject.DATA.EF.Models
         {
             get { return $"{FirstName} {LastName}"; }
         }
+        [NotMapped]
+        public IFormFile? Image { get; set; }
     }
 
 
