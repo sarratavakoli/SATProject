@@ -79,7 +79,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhotoUrl)
+               <img src="~/img/studentimages/@item.PhotoUrl" class="img-fluid" alt="@item.FirstName" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ss.Ssname)

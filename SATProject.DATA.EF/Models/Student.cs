@@ -20,10 +20,10 @@ namespace SATProject.DATA.EF.Models
         public string? ZipCode { get; set; }
         public string? Phone { get; set; }
         public string Email { get; set; } = null!;
-        public byte[]? PhotoUrl { get; set; }
+        public string? PhotoUrl { get; set; }
         public int Ssid { get; set; }
 
-        public virtual StudentStatus Ss { get; set; } = null!;
+        public virtual StudentStatus? Ss { get; set; } 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }
