@@ -4,23 +4,28 @@
     ViewData["Title"] = @Model.FullName;
 }
 
+@section css {
+<!-- Custom styles for lists template -->
+<link href="~/css/style.css" rel="stylesheet">
+<link href="~/css/style-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/to-do.css">
+}
+
+<section class="wrapper">
+   
+   
+
 <h2>@ViewData["Title"]</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FullName)
+            Name
         </dt>
         <dd>
             @Html.DisplayFor(model => model.FullName)
-        </dd>
-       @* <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>*@
+        </dd> 
         <dt>
             @Html.DisplayNameFor(model => model.Major)
         </dt>
@@ -31,9 +36,10 @@
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Address)
+            @Html.DisplayFor(model => model.Address)<br/>
+            @Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.State) @Html.DisplayFor(model => model.ZipCode)
         </dd>
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.City)
         </dt>
         <dd>
@@ -50,7 +56,7 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ZipCode)
-        </dd>
+        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.Phone)
         </dt>
@@ -63,14 +69,15 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt>
+       @* <dt>
             @Html.DisplayNameFor(model => model.PhotoUrl)
         </dt>
         <dd>
              <img src="~/img/studentimages/@Model.PhotoUrl" class="img-fluid" alt="@Model.FirstName" />
         </dd>
+
         <dt>
-            @Html.DisplayNameFor(model => model.Ss)
+            Status
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Ss.Ssname)
@@ -81,3 +88,20 @@
     <a asp-action="Edit" asp-route-id="@Model.StudentId">Edit</a> |
     <a asp-action="Index">Back to Students</a>
 </div>
+
+</section>
+
+@section Scripts {
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="lib/tasks.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function() {
+      TaskList.initTaskWidget();
+    });
+
+    $(function() {
+      $("#sortable").sortable();
+      $("#sortable").disableSelection();
+    });
+</script>
+}

@@ -22,7 +22,6 @@ namespace SATProject.DATA.EF.Models
         public string Email { get; set; } = null!;
         public string? PhotoUrl { get; set; }
         public int Ssid { get; set; }
-
         public virtual StudentStatus? Ss { get; set; } 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
