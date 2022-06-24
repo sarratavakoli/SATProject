@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\StronglyTypedData\Contact.cshtml" />
+    <None Include="Views\StronglyTypedData\EmailConfirmation.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
@@ -33,6 +35,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="MimeKit" Version="3.3.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 

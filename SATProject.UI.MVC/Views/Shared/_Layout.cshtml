@@ -46,6 +46,7 @@
                 @*<li><a class="logout" href="login.html">Logout</a></li>*@
                 <partial name="_LoginPartial" />
 
+
             </div>
         </header>
         <!--header end-->
@@ -57,6 +58,7 @@
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
+
                     <p class="centered"><img src="~/img/logo.png" class="img-circle" width="90%"></p>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -108,7 +110,13 @@
                             </ul>
                         </li>
                     }
-
+                     <li>
+            <a href="@Url.Action("Contact", "StronglyTypedData")">
+              <i class="fa fa-envelope"></i>
+              <span>Contact Form</span>
+           
+              </a>
+          </li>
 
                 </ul>
                 <!-- sidebar menu end-->
